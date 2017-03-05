@@ -3,5 +3,10 @@ class PostsController < ApplicationController
   end
 
   def create
-  end
+    end
+
+  private
+    def post_params
+      params.require(:post).permit(:author, :content, :all_tags)
+    end
 end
